@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <stdexcept>
 #include <cstddef>
+#include <type_traits>
 
 // You can use X, Y, and Z as if they were any fully specified type, such as an int or user-defined class.
 // with the exception of the first line, this class is completely similar to any other class.
@@ -87,6 +88,15 @@ To narrow_cast(From value)
 template<typename T>
 T mean(const T* values, size_t length)
 {
+    static_assert(std::is_default_constructible<T>(),
+            "Type must be default constructible.");
+    static_assert(std::is_copy_constructible<T>(),
+            "Type must be copy constructible.");
+    static_assert(std::is_arithmetic<T>(),
+            "Type must support addition and division.");
+    static_assert(std::is_constructible<T>(),
+            "Type must be constructible from size_t.");
+
     T result{};
     for (size_t i{}; i<length; i++)
     {
