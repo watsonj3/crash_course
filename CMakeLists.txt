@@ -3,4 +3,4 @@ project(crash_course)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(crash_course template_training.cpp)
+add_executable(crash_course advanced_memory_management.cpp)
