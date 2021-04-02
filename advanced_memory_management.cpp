@@ -24,7 +24,7 @@ struct Heap
     {
         // first check whether the number of bytes is greater than the bucket size
         if (bytes > Bucket::data_size) throw std::bad_alloc{};
-        // iterate through the buckets looking for 0one that isn't marked true in buckets used
+        // iterate through the buckets looking for one that isn't marked true in buckets used
         // if it finds an unused Bucket, then it returns data member pointer for the associated bucket.
         for (size_t i{}; i < n_heap_buckets; i++)
         {
@@ -37,7 +37,7 @@ struct Heap
         // throw an bad_alloc exception if it can't find an unused bucket.
         throw std::bad_alloc{};
     }
-    // accepts a void* and iterates through all the buckets looking fora  matching data member pointer.
+    // accepts a void* and iterates through all the buckets looking for a matching data member pointer.
     // If it finds one, it sets bucket_used for the corresponding bucket to false and returns.
     void free(void* p)
     {
@@ -61,7 +61,7 @@ struct Heap
 
 Heap heap;
 
-// Use n ew and delete for dynamic memory management. It will use heap instead of the default free store.
+// Use new and delete for dynamic memory management. It will use heap instead of the default free store.
 void* operator new(size_t n_bytes)
 {
     return heap.allocate(n_bytes);
