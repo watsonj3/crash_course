@@ -3,4 +3,4 @@ project(crash_course)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(crash_course typeConversionExamples.cpp constantExpressions.cpp)
+add_executable(crash_course variadicFunctions.cpp)
