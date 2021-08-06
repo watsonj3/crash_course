@@ -48,4 +48,4 @@ int main()
 }
 
 // variadic functions are a holdover from C. Generally, variadic functions are unsafe and a common source of security
-// vulnerabilities.
+// vulnerabilities.  They are not type-safe.
