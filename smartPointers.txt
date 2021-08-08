@@ -1,0 +1,14 @@
+
+Smart Pointers
+Dynamic objects have the most flexible lifetimes. You must make sure each dynamic object gets destructed exactly once.
+Smart pointers are class templates that behave like pointers and implement RAII for dynamic objects.
+
+Here, we describe scoped, unique, shared, weak, and intrusive pointers.Their ownership models differentiate these five
+smart pointer categories.
+
+Every smart pointer has an ownership model that specifies its relationship with a dynamically allocated object. When a
+smart pointer owns an object, the smart pointer's lifetime is guaranteed to be at least as long as the object's.
+When you use a smart pointer, you can rest assured that the pointed-to object is alive and that the pointed-to object won't
+leak. The smart pointer manages the object it owns.
+
+When considering which smart pointer to use, your ownership requirements drive your choice.
